@@ -180,16 +180,9 @@ import UIKit
             if isEditorLoaded {
                 runJS("RE.setHtml('\(newValue.escaped)');")
                 updateHeight()
-                updateWidth(width: 300)
             }
         }
     }
-
-    private func updateWidth(width: Int) {
-        runJS("RE.setWidth('\(width)');")
-
-    }
-
 
     /// Text representation of the data that has been input into the editor view, if it has been loaded.
     public var text: String {
@@ -457,7 +450,7 @@ import UIKit
         let heightString = runJS("document.getElementById('editor').clientHeight;")
         let height = Int(heightString) ?? 0
         if editorHeight != height {
-            editorHeight = height + 1000
+            editorHeight = height
         }
     }
 
@@ -504,11 +497,6 @@ import UIKit
                 isContentEditable = editingEnabledVar
                 placeholder = placeholderText
                 lineHeight = innerLineHeight
-
-
-                scrollCaretToVisible()
-
-
                 delegate?.richEditorDidLoad?(self)
             }
             updateHeight()
