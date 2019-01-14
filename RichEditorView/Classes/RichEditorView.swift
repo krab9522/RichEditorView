@@ -497,6 +497,11 @@ import UIKit
                 isContentEditable = editingEnabledVar
                 placeholder = placeholderText
                 lineHeight = innerLineHeight
+
+
+                scrollCaretToVisible()
+
+
                 delegate?.richEditorDidLoad?(self)
             }
             updateHeight()
