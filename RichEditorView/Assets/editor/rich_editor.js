@@ -145,6 +145,10 @@ RE.setHeight = function(size) {
     RE.editor.style.height = size;
 };
 
+RE.setWidth = function(size) {
+    RE.editor.style.width = size;
+};
+
 RE.undo = function() {
     document.execCommand('undo', false, null);
 };

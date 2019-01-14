@@ -180,9 +180,16 @@ import UIKit
             if isEditorLoaded {
                 runJS("RE.setHtml('\(newValue.escaped)');")
                 updateHeight()
+                updateWidth(width: 300)
             }
         }
     }
+
+    private func updateWidth(width: Int) {
+        runJS("RE.setWidth'(\(width))';")
+
+    }
+
 
     /// Text representation of the data that has been input into the editor view, if it has been loaded.
     public var text: String {
