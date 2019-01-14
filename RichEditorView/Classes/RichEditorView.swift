@@ -450,7 +450,7 @@ import UIKit
         let heightString = runJS("document.getElementById('editor').clientHeight;")
         let height = Int(heightString) ?? 0
         if editorHeight != height {
-            editorHeight = height
+            editorHeight = height + 1000
         }
     }
 
