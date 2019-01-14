@@ -186,7 +186,7 @@ import UIKit
     }
 
     private func updateWidth(width: Int) {
-        runJS("RE.setWidth'(\(width))';")
+        runJS("RE.setWidth('\(width)');")
 
     }
 
