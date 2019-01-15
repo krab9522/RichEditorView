@@ -136,12 +136,12 @@ import UIKit
     
     private func setup() {
         backgroundColor = .red
-        
-        webView.frame = CGRect.init(x: 40, y: 40, width: 300, height: 100)
+
+        webView.frame = bounds
         webView.delegate = self
         webView.keyboardDisplayRequiresUserAction = false
         webView.scalesPageToFit = false
-//        webView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        webView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         webView.dataDetectorTypes = UIDataDetectorTypes()
         webView.backgroundColor = .white
         
@@ -450,7 +450,7 @@ import UIKit
         let heightString = runJS("document.getElementById('editor').clientHeight;")
         let height = Int(heightString) ?? 0
         if editorHeight != height {
-            editorHeight = height + 1000
+            editorHeight = height
         }
     }
 
