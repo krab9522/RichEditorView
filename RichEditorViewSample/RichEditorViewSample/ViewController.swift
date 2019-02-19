@@ -16,7 +16,7 @@ class ViewController: UIViewController {
 
     lazy var toolbar: RichEditorToolbar = {
         let toolbar = RichEditorToolbar(frame: CGRect(x: 0, y: 0, width: self.view.bounds.width, height: 44))
-        toolbar.options = RichEditorDefaultOption.all
+        toolbar.options = RichEditorDefaultOption.blogger
         return toolbar
     }()
 
@@ -30,14 +30,14 @@ class ViewController: UIViewController {
         toolbar.delegate = self
         toolbar.editor = editorView
 
-        // We will create a custom action that clears all the input text when it is pressed
-        let item = RichEditorOptionItem(image: nil, title: "Clear") { toolbar in
-            toolbar.editor?.html = ""
-        }
-
-        var options = toolbar.options
-        options.append(item)
-        toolbar.options = options
+//        // We will create a custom action that clears all the input text when it is pressed
+//        let item = RichEditorOptionItem(image: nil, title: "Clear") { toolbar in
+//            toolbar.editor?.html = ""
+//        }
+//
+//        var options = toolbar.options
+//        options.append(item)
+//        toolbar.options = options
     }
 
 }

@@ -72,8 +72,14 @@ public enum RichEditorDefaultOption: RichEditorOption {
     case alignLeft
     case alignCenter
     case alignRight
+
     case image
+    case youtube
+    case text
     case link
+    case textFormat
+    case html
+    case hideKeyboard
     
     public static let all: [RichEditorDefaultOption] = [
         .clear,
@@ -83,6 +89,16 @@ public enum RichEditorDefaultOption: RichEditorOption {
         .header(1), .header(2), .header(3), .header(4), .header(5), .header(6),
         .indent, outdent, orderedList, unorderedList,
         .alignLeft, .alignCenter, .alignRight, .image, .link
+    ]
+
+    public static let blogger: [RichEditorDefaultOption] = [
+        .image,
+        .youtube,
+        .text,
+        .link,
+        .textFormat,
+        .html,
+        .hideKeyboard
     ]
 
     // MARK: RichEditorOption
@@ -109,8 +125,15 @@ public enum RichEditorDefaultOption: RichEditorOption {
         case .alignLeft: name = "justify_left"
         case .alignCenter: name = "justify_center"
         case .alignRight: name = "justify_right"
+
         case .image: name = "insert_image"
+        case .youtube: name = "insert_image"
+        case .text: name = "insert_image"
         case .link: name = "insert_link"
+        case .textFormat: name = "insert_image"
+        case .html: name = "insert_image"
+        case .hideKeyboard: name = "insert_image"
+
         }
         
         let bundle = Bundle(for: RichEditorToolbar.self)
@@ -138,8 +161,15 @@ public enum RichEditorDefaultOption: RichEditorOption {
         case .alignLeft: return NSLocalizedString("Left", comment: "")
         case .alignCenter: return NSLocalizedString("Center", comment: "")
         case .alignRight: return NSLocalizedString("Right", comment: "")
+
         case .image: return NSLocalizedString("Image", comment: "")
+        case .youtube: return NSLocalizedString("Image", comment: "")
+        case .text: return NSLocalizedString("Image", comment: "")
         case .link: return NSLocalizedString("Link", comment: "")
+        case .textFormat: return NSLocalizedString("Image", comment: "")
+        case .html: return NSLocalizedString("Image", comment: "")
+        case .hideKeyboard: return NSLocalizedString("Image", comment: "")
+
         }
     }
     
@@ -164,8 +194,14 @@ public enum RichEditorDefaultOption: RichEditorOption {
         case .alignLeft: toolbar.editor?.alignLeft()
         case .alignCenter: toolbar.editor?.alignCenter()
         case .alignRight: toolbar.editor?.alignRight()
+
         case .image: toolbar.delegate?.richEditorToolbarInsertImage?(toolbar)
+        case .youtube: toolbar.delegate?.richEditorToolbarInsertImage?(toolbar)
+        case .text: toolbar.delegate?.richEditorToolbarInsertImage?(toolbar)
         case .link: toolbar.delegate?.richEditorToolbarInsertLink?(toolbar)
+        case .textFormat: toolbar.delegate?.richEditorToolbarInsertImage?(toolbar)
+        case .html: toolbar.delegate?.richEditorToolbarInsertImage?(toolbar)
+        case .hideKeyboard: toolbar.delegate?.richEditorToolbarInsertImage?(toolbar)
         }
     }
 }
