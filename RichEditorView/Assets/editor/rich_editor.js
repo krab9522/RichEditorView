@@ -250,6 +250,18 @@ RE.insertVideo = function(url) {
     RE.callback("input");
 };
 
+RE.insertiFrameVideo = function(url) {
+    var video = document.createElement('iframe');
+    video.setAttribute("src", url);
+    video.style.width = "640px";
+    video.style.height = "480px";
+    document.body.appendChild(video);
+    video.onload = RE.updateHeight;
+
+    RE.insertHTML(video.outerHTML);
+    RE.callback("input");
+};
+
 RE.setBlockquote = function() {
     document.execCommand('formatBlock', false, '<blockquote>');
 };

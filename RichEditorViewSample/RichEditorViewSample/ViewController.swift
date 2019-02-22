@@ -87,8 +87,10 @@ extension ViewController: RichEditorToolbarDelegate {
 
     func richEditorToolbarInsertLink(_ toolbar: RichEditorToolbar) {
         // Can only add links to selected text, so make sure there is a range selection first
-        if toolbar.editor?.hasRangeSelection == true {
-            toolbar.editor?.insertLink("http://github.com/cjwirth/RichEditorView", title: "Github Link")
-        }
+//        if toolbar.editor?.hasRangeSelection == true {
+//            toolbar.editor?.insertLink("http://github.com/cjwirth/RichEditorView", title: "Github Link")
+//        }
+        toolbar.editor?.insertiFrameVideo("https://www.youtube.com/watch?v=3Dd1M1TX304")
+
     }
 }
