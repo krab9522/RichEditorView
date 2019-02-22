@@ -143,6 +143,7 @@ import UIKit
         webView.allowsLinkPreview = true
         webView.allowsInlineMediaPlayback = true
         webView.allowsPictureInPictureMediaPlayback = true
+        webView.mediaPlaybackAllowsAirPlay = true
         webView.scalesPageToFit = false
         webView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         webView.dataDetectorTypes = UIDataDetectorTypes()
