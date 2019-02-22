@@ -242,7 +242,7 @@ RE.insertImage = function(url, alt) {
 };
 
 RE.insertVideo = function(url) {
-    var video = document.createElement('script');
+    var video = document.createElement('video');
     video.setAttribute("src", url);
     video.onload = RE.updateHeight;
 
