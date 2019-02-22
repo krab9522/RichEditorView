@@ -332,7 +332,7 @@ import UIKit
 
     public func insertiFrameVideo(_ url: String) {
         runJS("RE.prepareInsert();")
-        runJS("RE.insertiFrameVideo('\(url.escaped)');")
+        runJS("RE.insertVideo2('\(url.escaped)');")
     }
 
 

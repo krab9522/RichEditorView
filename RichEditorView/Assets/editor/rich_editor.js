@@ -250,8 +250,8 @@ RE.insertVideo = function(url) {
     RE.callback("input");
 };
 
-RE.insertiFrameVideo = function(url) {
-    var video = document.createElement('video');
+RE.insertVideo2 = function(url) {
+    var video = document.createElement('iframe');
     video.setAttribute("src", url);
     video.onload = RE.updateHeight;
 

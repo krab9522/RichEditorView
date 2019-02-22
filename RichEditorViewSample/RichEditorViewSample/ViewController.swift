@@ -82,7 +82,7 @@ extension ViewController: RichEditorToolbarDelegate {
 
     func richEditorToolbarInsertImage(_ toolbar: RichEditorToolbar) {
 //        toolbar.editor?.insertImage("https://gravatar.com/avatar/696cf5da599733261059de06c4d1fe22", alt: "Gravatar")
-        toolbar.editor?.insertYoutubeVideo("https://www.youtube.com/watch?v=3Dd1M1TX304")
+        toolbar.editor?.insertYoutubeVideo("https://www.youtube.com/embed/hB2Rejs-W2k?feature=player_embedded")
     }
 
     func richEditorToolbarInsertLink(_ toolbar: RichEditorToolbar) {
@@ -90,7 +90,7 @@ extension ViewController: RichEditorToolbarDelegate {
 //        if toolbar.editor?.hasRangeSelection == true {
 //            toolbar.editor?.insertLink("http://github.com/cjwirth/RichEditorView", title: "Github Link")
 //        }
-        toolbar.editor?.insertiFrameVideo("https://www.youtube.com/watch?v=3Dd1M1TX304")
+        toolbar.editor?.insertiFrameVideo("https://www.youtube.com/embed/hB2Rejs-W2k?feature=player_embedded")
 
     }
 }
