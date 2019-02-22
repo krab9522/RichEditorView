@@ -251,7 +251,7 @@ RE.insertVideo = function(url) {
 };
 
 RE.insertiFrameVideo = function(url) {
-    var video = document.createElement('iframe');
+    var video = document.createElement('video');
     video.setAttribute("src", url);
     video.onload = RE.updateHeight;
 
