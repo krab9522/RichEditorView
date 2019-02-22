@@ -241,6 +241,15 @@ RE.insertImage = function(url, alt) {
     RE.callback("input");
 };
 
+RE.insertVideo = function(url) {
+    var video = document.createElement('script');
+    video.setAttribute("src", url);
+    video.onload = RE.updateHeight;
+
+    RE.insertHTML(video.outerHTML);
+    RE.callback("input");
+};
+
 RE.setBlockquote = function() {
     document.execCommand('formatBlock', false, '<blockquote>');
 };
