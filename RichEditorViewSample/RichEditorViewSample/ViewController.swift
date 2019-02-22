@@ -90,7 +90,7 @@ extension ViewController: RichEditorToolbarDelegate {
 //        if toolbar.editor?.hasRangeSelection == true {
 //            toolbar.editor?.insertLink("http://github.com/cjwirth/RichEditorView", title: "Github Link")
 //        }
-        toolbar.editor?.insertiFrameVideo("https://www.youtube.com/embed/hB2Rejs-W2k?feature=player_embedded")
+        toolbar.editor?.insertYoutubeVideo("https://www.youtube.com/embed/hB2Rejs-W2k?feature=player_embedded")
 
     }
 }

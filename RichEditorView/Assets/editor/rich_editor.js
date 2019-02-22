@@ -242,15 +242,6 @@ RE.insertImage = function(url, alt) {
 };
 
 RE.insertVideo = function(url) {
-    var video = document.createElement('video');
-    video.setAttribute("src", url);
-    video.onload = RE.updateHeight;
-
-    RE.insertHTML(video.outerHTML);
-    RE.callback("input");
-};
-
-RE.insertVideo2 = function(url) {
     var video = document.createElement('iframe');
     video.setAttribute("src", url);
     video.onload = RE.updateHeight;

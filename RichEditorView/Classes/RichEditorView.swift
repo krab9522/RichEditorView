@@ -327,15 +327,8 @@ import UIKit
 
     public func insertYoutubeVideo(_ url: String) {
         runJS("RE.prepareInsert();")
-        runJS("RE.insertVideo2('\(url.escaped)');")
+        runJS("RE.insertVideo('\(url.escaped)');")
     }
-
-    public func insertiFrameVideo(_ url: String) {
-        runJS("RE.prepareInsert();")
-        runJS("RE.insertVideo2('\(url.escaped)');")
-    }
-
-
 
     public func insertLink(_ href: String, title: String) {
         runJS("RE.prepareInsert();")
