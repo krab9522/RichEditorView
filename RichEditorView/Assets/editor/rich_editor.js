@@ -244,6 +244,7 @@ RE.insertImage = function(url, alt) {
 RE.insertVideo = function(url) {
     var video = document.createElement('iframe');
     video.setAttribute("src", url);
+    video.style.width = "80%";
     video.onload = RE.updateHeight;
 
     RE.insertHTML(video.outerHTML);

@@ -161,7 +161,9 @@ import UIKit
         if let filePath = Bundle(for: RichEditorView.self).path(forResource: "rich_editor", ofType: "html") {
             let url = URL(fileURLWithPath: filePath, isDirectory: false)
             let request = URLRequest(url: url)
-            webView.loadRequest(request)
+            DispatchQueue.main.async {
+                self.webView.loadRequest(request)
+            }
         }
 
         tapRecognizer.addTarget(self, action: #selector(viewWasTapped))

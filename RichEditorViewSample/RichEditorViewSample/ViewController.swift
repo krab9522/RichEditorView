@@ -82,7 +82,10 @@ extension ViewController: RichEditorToolbarDelegate {
 
     func richEditorToolbarInsertImage(_ toolbar: RichEditorToolbar) {
 //        toolbar.editor?.insertImage("https://gravatar.com/avatar/696cf5da599733261059de06c4d1fe22", alt: "Gravatar")
-        toolbar.editor?.insertYoutubeVideo("https://www.youtube.com/embed/hB2Rejs-W2k?feature=player_embedded")
+//        toolbar.editor?.insertYoutubeVideo("https://www.youtube.com/embed/hB2Rejs-W2k?feature=player_embedded")
+
+        toolbar.editor?.insertYoutubeVideo("https://www.youtube.com/embed/lvusHUeGmQg?modestbranding=1;title=;showinfo=0;rel=0;controls=0")
+
     }
 
     func richEditorToolbarInsertLink(_ toolbar: RichEditorToolbar) {
