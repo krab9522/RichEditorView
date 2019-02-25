@@ -188,14 +188,14 @@ RE.setTextColor = function(color) {
     RE.restorerange();
     document.execCommand("styleWithCSS", null, true);
     document.execCommand('foreColor', false, color);
-    document.execCommand("styleWithCSS", null, false);
+//    document.execCommand("styleWithCSS", null, false);
 };
 
 RE.setTextBackgroundColor = function(color) {
     RE.restorerange();
     document.execCommand("styleWithCSS", null, true);
     document.execCommand('hiliteColor', false, color);
-    document.execCommand("styleWithCSS", null, false);
+//    document.execCommand("styleWithCSS", null, false);
 };
 
 RE.setHeading = function(heading) {
