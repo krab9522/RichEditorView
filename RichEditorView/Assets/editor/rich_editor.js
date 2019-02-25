@@ -99,6 +99,7 @@ RE.setHtml = function(contents) {
 
     for (var i = 0; i < images.length; i++) {
         images[i].onload = RE.updateHeight;
+        images[i].style.width = "80%";
     }
 
     RE.editor.innerHTML = tempWrapper.innerHTML;
@@ -235,6 +236,7 @@ RE.insertImage = function(url, alt) {
     var img = document.createElement('img');
     img.setAttribute("src", url);
     img.setAttribute("alt", alt);
+    img.style.width = "80%";
     img.onload = RE.updateHeight;
 
     RE.insertHTML(img.outerHTML);
