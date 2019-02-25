@@ -102,6 +102,12 @@ RE.setHtml = function(contents) {
         images[i].style.width = "80%";
     }
 
+    var iframes = tempWrapper.querySelectorAll("iframe");
+    for (var i = 0; i < iframes.length; i++) {
+        iframes[i].onload = RE.updateHeight;
+        iframes[i].style.width = "80%";
+    }
+
     RE.editor.innerHTML = tempWrapper.innerHTML;
     RE.updatePlaceholder();
 };
