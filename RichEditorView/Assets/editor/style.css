@@ -71,7 +71,7 @@ span {
 
 #wrap {
     height: 100%;
-    width: 94%;
+    width: calc(94% - 4px);
     padding: 2px 3% 2px; /* 3% * 2side(left-right) = 6% */
     overflow-y: scroll;
     overflow-x: hidden;

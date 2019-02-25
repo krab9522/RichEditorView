@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
- "use strict";
+"use strict";
 
 var RE = {};
 
@@ -25,8 +25,8 @@ RE.editor = document.getElementById('editor');
 
 // Not universally supported, but seems to work in iOS 7 and 8
 document.addEventListener("selectionchange", function() {
-    RE.backuprange();
-});
+                          RE.backuprange();
+                          });
 
 //looks specifically for a Range selection and not a Caret selection
 RE.rangeSelectionExists = function() {
@@ -48,19 +48,19 @@ RE.rangeOrCaretSelectionExists = function() {
 };
 
 RE.editor.addEventListener("input", function() {
-    RE.updatePlaceholder();
-    RE.backuprange();
-    RE.callback("input");
-});
+                           RE.updatePlaceholder();
+                           RE.backuprange();
+                           RE.callback("input");
+                           });
 
 RE.editor.addEventListener("focus", function() {
-    RE.backuprange();
-    RE.callback("focus");
-});
+                           RE.backuprange();
+                           RE.callback("focus");
+                           });
 
 RE.editor.addEventListener("blur", function() {
-    RE.callback("blur");
-});
+                           RE.callback("blur");
+                           });
 
 RE.customAction = function(action) {
     RE.callback("action/" + action);
@@ -77,8 +77,8 @@ RE.runCallbackQueue = function() {
     }
 
     setTimeout(function() {
-        window.location.href = "re-callback://";
-    }, 0);
+               window.location.href = "re-callback://";
+               }, 0);
 };
 
 RE.getCommandQueue = function() {
@@ -98,14 +98,24 @@ RE.setHtml = function(contents) {
     var images = tempWrapper.querySelectorAll("img");
 
     for (var i = 0; i < images.length; i++) {
+
+        images[i].style.maxHeight = "80%";
+        images[i].style.maxWidth = "80%";
+        images[i].style.height = "auto";
+        images[i].style.width = "auto";
+
         images[i].onload = RE.updateHeight;
-        images[i].style.width = "80%";
     }
 
     var iframes = tempWrapper.querySelectorAll("iframe");
     for (var i = 0; i < iframes.length; i++) {
+
+        iframes[i].style.maxHeight = "80%";
+        iframes[i].style.maxWidth = "80%";
+        iframes[i].style.height = "auto";
+        iframes[i].style.width = "auto";
+
         iframes[i].onload = RE.updateHeight;
-        iframes[i].style.width = "80%";
     }
 
     RE.editor.innerHTML = tempWrapper.innerHTML;
@@ -188,14 +198,14 @@ RE.setTextColor = function(color) {
     RE.restorerange();
     document.execCommand("styleWithCSS", null, true);
     document.execCommand('foreColor', false, color);
-//    document.execCommand("styleWithCSS", null, false);
+    //    document.execCommand("styleWithCSS", null, false);
 };
 
 RE.setTextBackgroundColor = function(color) {
     RE.restorerange();
     document.execCommand("styleWithCSS", null, true);
     document.execCommand('hiliteColor', false, color);
-//    document.execCommand("styleWithCSS", null, false);
+    //    document.execCommand("styleWithCSS", null, false);
 };
 
 RE.setHeading = function(heading) {
@@ -242,19 +252,32 @@ RE.insertImage = function(url, alt) {
     var img = document.createElement('img');
     img.setAttribute("src", url);
     img.setAttribute("alt", alt);
-    img.style.width = "80%";
+
+    img.style.maxHeight = "80%";
+    img.style.maxWidth = "80%";
+    img.style.height = "auto";
+    img.style.width = "auto";
+
     img.onload = RE.updateHeight;
 
+    RE.setJustifyCenter();
     RE.insertHTML(img.outerHTML);
+
     RE.callback("input");
 };
 
 RE.insertVideo = function(url) {
     var video = document.createElement('iframe');
     video.setAttribute("src", url);
-    video.style.width = "80%";
+
+    video.style.maxHeight = "80%";
+    video.style.maxWidth = "80%";
+    video.style.height = "auto";
+    video.style.width = "auto";
+
     video.onload = RE.updateHeight;
 
+    RE.setJustifyCenter();
     RE.insertHTML(video.outerHTML);
     RE.callback("input");
 };
@@ -352,8 +375,8 @@ RE.blurFocus = function() {
 };
 
 /**
-Recursively search element ancestors to find a element nodeName e.g. A
-**/
+ Recursively search element ancestors to find a element nodeName e.g. A
+ **/
 var _findNodeByNameInContainer = function(element, nodeName, rootElementId) {
     if (element.nodeName == nodeName) {
         return element;
