@@ -292,21 +292,14 @@ RE.insertHTML = function(html) {
 };
 
 RE.insertLink = function(url, title) {
-    RE.restorerange();
-    var sel = document.getSelection();
-    if (sel.toString().length !== 0) {
-        if (sel.rangeCount) {
 
-            var el = document.createElement("a");
-            el.setAttribute("href", url);
-            el.setAttribute("title", title);
+    var el = document.createElement("a");
+    el.innerHTML = title
+    el.setAttribute("href", url);
+    el.setAttribute("title", title);
 
-            var range = sel.getRangeAt(0).cloneRange();
-            range.surroundContents(el);
-            sel.removeAllRanges();
-            sel.addRange(range);
-        }
-    }
+    RE.insertHTML(el.outerHTML);
+
     RE.callback("input");
 };
 
