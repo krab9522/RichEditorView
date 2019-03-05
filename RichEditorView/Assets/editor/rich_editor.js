@@ -194,22 +194,35 @@ RE.setUnderline = function() {
     document.execCommand('underline', false, null);
 };
 
+
+// text color
+
 RE.setTextColor = function(color) {
     RE.restorerange();
     document.execCommand("styleWithCSS", null, true);
     document.execCommand('foreColor', false, color);
-    //    document.execCommand("styleWithCSS", null, false);
+    document.execCommand("styleWithCSS", null, false);
 };
 
 RE.setTextBackgroundColor = function(color) {
     RE.restorerange();
     document.execCommand("styleWithCSS", null, true);
     document.execCommand('hiliteColor', false, color);
-    //    document.execCommand("styleWithCSS", null, false);
+    document.execCommand("styleWithCSS", null, false);
 };
 
 RE.setHeading = function(heading) {
     document.execCommand('formatBlock', false, '<h' + heading + '>');
+};
+
+// xx-small = 1; x-small = 2; small = 3 ; large = 5; x-large = 6
+RE.setFontXSize = function(xSize) {
+    document.execCommand('fontSize', false, xSize);
+};
+
+// Arial, Courier, Georgia, Helvetica, Times, Trebuchet, Verdana
+RE.setFontName = function(fontName) {
+    document.execCommand('fontName', false, fontName);
 };
 
 RE.setIndent = function() {
