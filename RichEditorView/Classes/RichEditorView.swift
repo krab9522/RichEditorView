@@ -238,7 +238,15 @@ import UIKit
     public func setFontSize(_ size: Int) {
         runJS("RE.setFontSize('\(size)px');")
     }
-    
+
+    public func setFontXSize(_ size: Int) {
+        runJS("RE.setFontSize('\(size)');")
+    }
+
+    public func setFontName(_ name: String) {
+        runJS("RE.setFontName('\(name)');")
+    }
+
     public func setEditorBackgroundColor(_ color: UIColor) {
         runJS("RE.setBackgroundColor('\(color.hex)');")
     }
