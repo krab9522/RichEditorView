@@ -240,7 +240,7 @@ import UIKit
     }
 
     public func setFontXSize(_ size: Int) {
-        runJS("RE.setFontSize('\(size)');")
+        runJS("RE.setFontXSize('\(size)');")
     }
 
     public func setFontName(_ name: String) {

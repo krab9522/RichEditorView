@@ -222,7 +222,9 @@ RE.setFontXSize = function(xSize) {
 
 // Arial, Courier, Georgia, Helvetica, Times, Trebuchet, Verdana
 RE.setFontName = function(fontName) {
+    document.execCommand("styleWithCSS", null, true);
     document.execCommand('fontName', false, fontName);
+    document.execCommand("styleWithCSS", null, false);
 };
 
 RE.setIndent = function() {

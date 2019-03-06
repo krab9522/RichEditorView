@@ -81,19 +81,23 @@ extension ViewController: RichEditorToolbarDelegate {
     }
 
     func richEditorToolbarInsertImage(_ toolbar: RichEditorToolbar) {
-//        toolbar.editor?.insertImage("https://gravatar.com/avatar/696cf5da599733261059de06c4d1fe22", alt: "Gravatar")
-//        toolbar.editor?.insertYoutubeVideo("https://www.youtube.com/embed/hB2Rejs-W2k?feature=player_embedded")
-
-        toolbar.editor?.insertYoutubeVideo("https://www.youtube.com/embed/lvusHUeGmQg?modestbranding=1;title=;showinfo=0;rel=0;controls=0")
-
+////        toolbar.editor?.insertImage("https://gravatar.com/avatar/696cf5da599733261059de06c4d1fe22", alt: "Gravatar")
+////        toolbar.editor?.insertYoutubeVideo("https://www.youtube.com/embed/hB2Rejs-W2k?feature=player_embedded")
+//
+//        toolbar.editor?.insertYoutubeVideo("https://www.youtube.com/embed/lvusHUeGmQg?modestbranding=1;title=;showinfo=0;rel=0;controls=0")
+        toolbar.editor?.setFontName("Georgia")
     }
 
     func richEditorToolbarInsertLink(_ toolbar: RichEditorToolbar) {
-        // Can only add links to selected text, so make sure there is a range selection first
-        if toolbar.editor?.hasRangeSelection == true {
-            toolbar.editor?.insertLink("http://github.com/cjwirth/RichEditorView", title: "Github Link")
-        }
+//        // Can only add links to selected text, so make sure there is a range selection first
+//        if toolbar.editor?.hasRangeSelection == true {
+//            toolbar.editor?.insertLink("http://github.com/cjwirth/RichEditorView", title: "Github Link")
+//        }
 //        toolbar.editor?.insertYoutubeVideo("https://www.youtube.com/embed/hB2Rejs-W2k?feature=player_embedded")
+
+//        toolbar.editor?.setFontXSize(6)
+        let color = randomColor()
+        toolbar.editor?.setTextColor(color)
 
     }
 }
