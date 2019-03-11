@@ -318,8 +318,15 @@ import UIKit
         runJS("RE.setUnorderedList();")
     }
 
+    var isBlockquote = true
     public func blockquote() {
-        runJS("RE.setBlockquote()");
+        if isBlockquote {
+            runJS("RE.setBlockquote()");
+            isBlockquote = false
+        } else {
+            self.outdent()
+            isBlockquote = true
+        }
     }
     
     public func alignLeft() {
@@ -332,6 +339,10 @@ import UIKit
     
     public func alignRight() {
         runJS("RE.setJustifyRight();")
+    }
+
+    public func alignFull() {
+        runJS("RE.setJustifyFull();")
     }
     
     public func insertImage(_ url: String, alt: String) {

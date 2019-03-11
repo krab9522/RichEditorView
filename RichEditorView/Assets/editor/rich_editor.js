@@ -212,12 +212,18 @@ RE.setTextBackgroundColor = function(color) {
 };
 
 RE.setHeading = function(heading) {
+    RE.restorerange();
+    document.execCommand("styleWithCSS", null, true);
     document.execCommand('formatBlock', false, '<h' + heading + '>');
+    document.execCommand("styleWithCSS", null, false);
 };
 
 // xx-small = 1; x-small = 2; small = 3 ; large = 5; x-large = 6
 RE.setFontXSize = function(xSize) {
+    RE.restorerange();
+    document.execCommand("styleWithCSS", null, true);
     document.execCommand('fontSize', false, xSize);
+    document.execCommand("styleWithCSS", null, false);
 };
 
 // Arial, Courier, Georgia, Helvetica, Times, Trebuchet, Verdana
@@ -253,6 +259,10 @@ RE.setJustifyCenter = function() {
 
 RE.setJustifyRight = function() {
     document.execCommand('justifyRight', false, null);
+};
+
+RE.setJustifyFull = function() {
+    document.execCommand('justifyFull', false, null);
 };
 
 RE.getLineHeight = function() {
@@ -298,6 +308,7 @@ RE.insertVideo = function(url) {
 };
 
 RE.setBlockquote = function() {
+    RE.restorerange();
     document.execCommand('formatBlock', false, '<blockquote>');
 };
 
