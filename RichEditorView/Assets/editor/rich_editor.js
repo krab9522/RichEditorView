@@ -213,10 +213,24 @@ RE.setTextBackgroundColor = function(color) {
 
 RE.setHeading = function(heading) {
     RE.restorerange();
-    document.execCommand("styleWithCSS", null, true);
+    //    document.execCommand('removeformat', false, false);
+    //    RE.unwrap();
+    document.execCommand('formatBlock', false, 'p');
     document.execCommand('formatBlock', false, '<h' + heading + '>');
-    document.execCommand("styleWithCSS", null, false);
+    RE.unwrap();
 };
+
+RE.unwrap = function() {
+    var container = null;
+    if (document.selection)
+        container = document.selection.createRange().parentElement();
+    else {
+        var select =  window.getSelection();
+        if (select.rangeCount > 0)
+            container = select.getRangeAt(0).startContainer.parentNode;
+    }
+    container.contents().unwrap();
+}
 
 // xx-small = 1; x-small = 2; small = 3 ; large = 5; x-large = 6
 RE.setFontXSize = function(xSize) {
@@ -242,10 +256,12 @@ RE.setOutdent = function() {
 };
 
 RE.setOrderedList = function() {
+    document.execCommand('formatBlock', false, 'p');
     document.execCommand('insertOrderedList', false, null);
 };
 
 RE.setUnorderedList = function() {
+    document.execCommand('formatBlock', false, 'p');
     document.execCommand('insertUnorderedList', false, null);
 };
 
