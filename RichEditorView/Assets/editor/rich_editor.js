@@ -301,8 +301,9 @@ RE.insertImage = function(url, alt) {
 
     img.onload = RE.updateHeight;
 
-    RE.setJustifyLeft();
+    RE.setJustifyCenter();
     RE.insertHTML(img.outerHTML);
+    RE.setJustifyLeft();
 
     RE.callback("input");
 };
@@ -318,8 +319,10 @@ RE.insertVideo = function(url) {
 
     video.onload = RE.updateHeight;
 
-    RE.setJustifyLeft();
+    RE.setJustifyCenter();
     RE.insertHTML(video.outerHTML);
+    RE.setJustifyLeft();
+
     RE.callback("input");
 };
 
